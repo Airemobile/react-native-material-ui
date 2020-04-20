@@ -61,7 +61,7 @@ const propTypes = {
     icon: PropTypes.string,
   }),
   /**
-   * You can override any style for the component via this prop
+   * You can overide any style for the component via this prop
    */
   style: PropTypes.shape({
     container: ViewPropTypes.style,
@@ -192,7 +192,11 @@ class Toolbar extends PureComponent {
 
   componentWillReceiveProps(nextProps) {
     const { isSearchActiveInternal } = this.state;
-    const { isSearchActive, hidden } = this.props;
+    const { isSearchActive, hidden, searchValue } = this.props;
+
+    if(searchValue != null){
+      this.setState({ searchValue : (nextProps.searchValue != null) ? nextProps.searchValue : '' });
+    }
 
     // if search is active and we clicked on the results which does not allow search
     // then close the previous search.
