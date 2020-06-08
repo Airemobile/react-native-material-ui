@@ -76,6 +76,7 @@ const propTypes = {
     titleText: Text.propTypes.style, // eslint-disable-line
     rightElementContainer: ViewPropTypes.style,
     rightElement: PropTypes.any, // eslint-disable-line
+    barSearchElementContainerStyle: ViewPropTypes.style, // eslint-disable-line
   }),
   /**
    * This size is used for each icon on the toolbar
@@ -386,7 +387,7 @@ class Toolbar extends PureComponent {
   }
 
   renderAnimatedBackgrounds = styles => {
-    const { theme } = this.props;
+    const { theme , style } = this.props;
     const {
       diameter,
       bgPosition,
@@ -418,6 +419,7 @@ class Toolbar extends PureComponent {
             backgroundColor: searchActive.backgroundColor,
             transform: [{ scale: searchScaleValue }],
           },
+          style.barSearchElementContainerStyle,
         ]}
       />
     );
