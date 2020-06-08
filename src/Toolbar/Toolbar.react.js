@@ -44,6 +44,10 @@ const propTypes = {
      */
     placeholder: PropTypes.string,
     /**
+     * The text color of the placeholder string.
+     */
+    placeholderTextColor: PropTypes.string,
+    /**
      * Indicates when input should be focused after the search is opened.
      */
     autoFocus: PropTypes.bool,
